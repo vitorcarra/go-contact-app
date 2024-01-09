@@ -1,0 +1,32 @@
+{{ block "content" . }}
+<div class=" m-5">
+    <form action="/contacts/{{ .ID }}/edit" method="post">
+        <div>
+            <div>
+                <input class="input input-bordered mt-3" placeholder="First Name" type="text" name="first_name"
+                    id="first_name" value="{{ .FirstName }}" />
+                <input class="input input-bordered mt-3" placeholder="Last Name" type="text" name="last_name"
+                    id="last_name" value="{{ .LastName }}" />
+            </div>
+            <div class="mt-5">
+                <input class="input input-bordered mt-3" placeholder="Email" type="email" name="email" id="email"
+                    value="{{ .Email }}" />
+                <input class="input input-bordered mt-3" placeholder="Phone" type="tel" name="phone" id="phone"
+                    value="{{ .Phone }}" />
+            </div>
+        </div>
+        <div>
+            <a href="/contacts" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md mt-5">Back</a>
+            <button class="btn btn-active mt-5">Save</button>
+        </div>
+
+    </form>
+</div>
+<div class="m-5">
+    <form action="/contacts/{{ .ID }}/delete" method="post">
+        <button class="btn btn-error">Delete</button>
+    </form>
+</div>
+
+
+{{ end }}
